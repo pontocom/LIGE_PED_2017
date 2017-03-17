@@ -1,0 +1,19 @@
+#CREATE DATABASE pim_lige;
+
+
+CREATE TABLE contacto (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(250) NOT NULL,
+  morada TEXT NOT NULL,
+  telefone VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  photo VARCHAR(100),
+  id_contacto INTEGER NOT NULL,
+  FOREIGN KEY (id_contacto) REFERENCES user_pim(id)
+);
+
+CREATE TABLE user_pim(
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(128) NOT NULL,
+  passwd VARCHAR(128) NOT NULL
+);
